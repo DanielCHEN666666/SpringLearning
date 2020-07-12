@@ -2,10 +2,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
+    <!--框架使用元素中的default-init-method 和 default-destroy-method属性提供了灵活地配置这种情况-->
 
     <bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
         <property name="message" value="Hello World!"/>
     </bean>
+
+    <!--<bean id="helloWorld" class="com.tutorialspoint.HelloWorld"-->
+          <!--init-method="init" destroy-method="destroy">-->
+        <!--<property name="message" value="Hello World!"/>-->
+    <!--</bean>-->
+
+
 
 </beans>
